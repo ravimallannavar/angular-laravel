@@ -12,6 +12,7 @@ class Report
 
     function reportfilter($from,$to){
         $data=DB::table('employee')->where('birthday', '>=', $from)->where('hiered_date', '<=', $to)->get();
+        // $data=DB::table('employee')->where('birthday', $from)->where('hiered_date', $to)->get();
         return $data;
 
     }

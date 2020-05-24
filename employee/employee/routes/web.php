@@ -96,6 +96,7 @@ Route::get('/getReport', 'ReportController@getReport');
 // --------->count employee<-------------
 Route::get('/getEmployees', 'EmployeeDataController@getEmployees');
 Route::get('/GetByEmployeeData/{emp_id}', 'EmployeeDataController@GetByEmployeeData');  
+Route::get('/getselectEmployee', 'EmployeeController@getselectEmployee');
 // --------->count employee<-------------
 
 // --------->user register<-------------
@@ -117,6 +118,10 @@ Route::post('/login', 'LoginController@login');
 // --------------->password reset<---------------
 Route::patch('/PasswordReset/{user_id}', 'passwordresetcontroller@PasswordReset');
 // --------------->password reset<---------------
+Route::get('/filteremployeebyname/{first_name}', 'EmployeeController@filteremployeebyname');  
+Route::get('/selectbyname/{first_name}', 'EmployeeController@selectbyname');  
+
+Route::get('/getChart', 'chartController@getChart');  
 
 
 // <?php

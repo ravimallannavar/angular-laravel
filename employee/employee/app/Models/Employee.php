@@ -29,6 +29,11 @@ class Employee
         return $data;
     }
 
+    function getselectEmployee() {
+        $data=DB::table('employee')->get();
+        return $data;
+    }
+
         function countEmployee(){
     $data=DB::table('employee')->get()->count();
     return $data;
@@ -41,6 +46,17 @@ class Employee
         return $data;
 
     }
+
+    function filteremployeebyname($id){
+        $data=DB::table('employee')->where('first_name', $id)->get()->first();
+        return $data;
+    }
+
+    function selectbyname($id){
+        $data=DB::table('employee')->where('first_name', $id)->get();
+        return $data;
+    }
+
 
     function addEmployee($data)
     {

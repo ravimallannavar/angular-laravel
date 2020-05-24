@@ -4,7 +4,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
-
 class EmployeeController extends Controller
 {
     function getEmployee()
@@ -16,8 +15,29 @@ class EmployeeController extends Controller
         return response()->json($data);
     }
 
+    function getselectEmployee()
+    {
+        $employeeModel=new Employee();
+        $data=$employeeModel->getselectEmployee();
+        return response()->json($data);
+    }
 
 
+   function filteremployeebyname(Request $request){
+        $id=$request->first_name;
+        $employeeModel=new Employee();
+        $data=$employeeModel->filteremployeebyname($id);
+        return response()->json($data);
+
+    }
+     
+    function selectbyname(Request $request){
+        $id=$request->first_name;
+        $employeeModel=new Employee();
+        $data=$employeeModel->selectbyname($id);
+        return response()->json($data);
+    }
+    
     function filteremployee(Request $request){
         $id=$request->first_name;
         $name=$request->emp_dept;

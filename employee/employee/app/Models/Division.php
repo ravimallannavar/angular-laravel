@@ -27,7 +27,6 @@ class Division
     function searchbyname($id){
         $data=DB::table('division')->where('div_name','LIKE', "%$id%")->get();
         return $data;
-
     }
   
 

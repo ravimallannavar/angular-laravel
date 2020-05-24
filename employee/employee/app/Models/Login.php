@@ -28,33 +28,38 @@ class Login
 //     }
 // }
 
-    // function login($email,$password){
-     
-    //     $data=DB::table('user')->where('email_address',  '=', $email)->where('password', '=', $password)
-    //     ->get()->first();
-    //     if($data->status == 0){
-    //          "Login Successfull";
-    //     }
-    //     else{
-    //          "Login Failed Wrong data";
-    //     }
+    function login($email,$password){
         
-    //     return $data;
-    // }
-
-
-function login($email,$password){
-    // LoginStatus: '';
-    $status = '';
-    
-    $data=DB::table('user')->where('email_address', $email)->where('password', $password)
-    ->get()->first();
-        if($status == 0){
-        return $data;
-    }elseif($status == 1){
-        return "Wrong Credentials";
-
+        $data=DB::table('user')->where('email_address',  '=', $email)->where('password', '=', $password)
+        ->get()->first(); 
+        $status = isSet($data->user_id);;
+        // return sizeof($data);
+        if($status){
+            return array("status"=>"success","statuscode"=>1,"data"=>$data);
+            // return $data;
+        }
+        else{
+            return array("status"=>"error","statuscode"=>0,"msg"=>"Login failed");
+              //return "Login Failed Wrong data";
+        }
+        
+       // return isSet($data->user_id);
     }
+
+    
+
+// function login($email,$password){
+//     // LoginStatus: '';
+//     $status = '';
+    
+//     $data=DB::table('user')->where('email_address', $email)->where('password', $password)
+//     ->get()->first();
+//         if($status > 0){
+//         return $data;
+//     }elseif($status < 1){
+//         return "Wrong Credentials";
+
+//     }
     
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +83,7 @@ function login($email,$password){
     
 
 
-}}
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // if($user->role->id == 1) {
 //     return redirect()->intended('/admin'); // it will be according to your routes.

@@ -18,7 +18,7 @@ class LoginController extends Controller
         $loginModel=new Login;
         $data=$loginModel->login($email,$password);
         // $status=$loginModel->login($email,$password);
-        $status["status"] = $data;
+        $status=$loginModel = $data;
         // dd($response);
         return response()->json($data);
 
