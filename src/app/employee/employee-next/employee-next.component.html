@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-12">
+  <div class="pull-left">
+      <h4>Employee Management</h4>
+  </div>
+  <div class="pull-right">
+      <p><i class="fa fa-dashboard"></i>&nbsp;Employee Management <i class="fa fa-chevron-right"></i>&nbsp;<span>Employee</span></p>
+  </div>       
+  </div>
+</div>
+<div class="row">
+  <!-- <div class="col-md-6 d-flex align-items-stretch grid-margin">
+    
+  </div> -->
+
+  <div class="col-12 grid-margin">
+    <div>
+      <canvas
+      
+          baseChart
+          [chartType]="'pie'"
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [options]="pieChartOptions"
+          [legend]="true"
+          [colors]="pieChartColor"
+          (chartClick)="onChartClick($event)">
+      </canvas>
+    </div>
+
+    <div>
+      <canvas
+          baseChart
+          [chartType]="'bar'"
+          [datasets]="chartData"
+          [labels]="labels"
+          [options]="chartOptions"
+          [legend]="true"
+          [colors]="colors"
+          (chartClick)="onChartClick($event)">
+      </canvas>
+    </div>
+
+   
+    <div>
+
+      <button type="button" class="btn btn-primary" (click)="changeLegendPosition()">changeLegendPosition</button>
+    </div>
+  </div>
+
+</div>

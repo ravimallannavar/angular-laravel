@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-6 stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Add Department</h4>
+            
+            <form (ngSubmit)="Editdivision()">
+             <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Full Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" name="div_name" [(ngModel)]="division.div_name" placeholder="Enter Department Name">
+                    </div>
+              </div>
+              <button type="submit" class="btn btn-success mr-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3">
+
+    </div>
+
+</div>

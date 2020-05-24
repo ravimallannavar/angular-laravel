@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-6 stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">User Registration</h4>
+            
+            <form (ngSubmit)="UpdateUser()">
+             <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Full Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" name="user_name" [(ngModel)]="user.user_name" placeholder="Enter User Name">
+                    </div>
+              </div>
+              <div class="form-group row">
+                <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" name="email_address" [(ngModel)]="user.email_address" placeholder="Enter email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="exampleInputEmail2" class="col-sm-3 col-form-label">First Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="first_name" [(ngModel)]="user.first_name" placeholder="Enter First Name">
+                </div>
+          </div>
+              <div class="form-group row">
+                <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Last Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="last_name" [(ngModel)]="user.last_name" placeholder="Enter last_name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Password</label>
+                <div class="col-sm-9">
+                  <input type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Enter Password">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Confirm Password</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="confirm_password" [(ngModel)]="user.confirm_password" placeholder="Enter Confirm Password">
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-success mr-2">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3">
+            
+
+    </div>
+
+</div>

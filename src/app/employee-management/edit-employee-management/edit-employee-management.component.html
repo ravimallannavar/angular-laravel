@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-6 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Employee</h4>
+
+                <form (ngSubmit)="EditEmpData()">
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">First Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="first_name"
+                                [(ngModel)]="employee.first_name" placeholder="Enter Department Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Middle Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="middle_name"
+                                [(ngModel)]="employee.middle_name" placeholder="Enter Middle Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Last Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="last_name"
+                                [(ngModel)]="employee.last_name" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="address"
+                                [(ngModel)]="employee.address" placeholder="Enter Address Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="country" class="col-sm-3 col-form-label">Choose Country</label>
+                        <div class="col-sm-9">
+                        <select name="emp_countryid" class="form-control" [(ngModel)]="employee.emp_countryid" (change)="getState($event)">
+							<option value="">Select Country</option>
+							<option *ngFor="let obj of countries" value="{{obj.country_id}}">{{obj.country_name}}</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="state" class="col-sm-3 col-form-label">Choose State</label>
+                        <div class="col-sm-9">
+						<select name="emp_stateid" class="form-control" [(ngModel)]="employee.emp_stateid" (change)="getCity($event)">
+							<option value="">Select State</option>
+							<option *ngFor="let obj of states" value="{{obj.state_id}}">{{obj.state_name}}</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="city" class="col-sm-3 col-form-label">Choose City</label>
+                        <div class="col-sm-9">
+						<select name="emp_cityid" class="form-control" [(ngModel)]="employee.emp_cityid">
+							<option value="">Select City</option>
+							<option *ngFor="let obj of cities" value="{{obj.city_id}}">{{obj.city_name}}</option>
+                        </select>
+                    </div>
+					</div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Zip</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="zip"
+                                [(ngModel)]="employee.zip" placeholder="Enter Zip">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Age</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="age"
+                                [(ngModel)]="employee.age" placeholder="Enter Age">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Birthday</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" name="birthday"
+                                [(ngModel)]="employee.birthday" placeholder="Enter Birthday">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Hiered Date</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" name="hiered_date"
+                                [(ngModel)]="employee.hiered_date" placeholder="Enter Birthday">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Department</label>
+                        <div class="col-sm-9">
+                            
+                            <select name="emp_cityid" class="form-control" [(ngModel)]="employee.emp_dept">
+							<option value="">Select Department</option>
+							<option *ngFor="let obj of departments" value="{{obj.dept_id}}">{{obj.dept_name}}</option>
+                        </select>    
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Division</label>
+                        <div class="col-sm-9">
+                           
+                            <select name="emp_divid" class="form-control" [(ngModel)]="employee.emp_divid">
+							<option value="">Select Division</option>
+							<option *ngFor="let obj of divisions" value="{{obj.div_id}}">{{obj.div_name}}</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Picture</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" name="image"
+                               (change)="ImageUpload($event)">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Update Employee</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+
+</div>

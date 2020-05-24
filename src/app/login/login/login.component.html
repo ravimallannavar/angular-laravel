@@ -1,0 +1,44 @@
+
+<div class="container-scroller">
+<div class="container">
+<div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-6 stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">User Login</h4>
+            
+            <form (ngSubmit)="UserLogIn()">
+             
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon bg-info bg-info" id="colored-addon1">
+                        <i class="mdi mdi-shield-outline text-white"></i>
+                      </span>
+                      <input type="text" class="form-control"  name="email_address" [(ngModel)]="user.email_address" placeholder="Username" aria-label="Username" aria-describedby="colored-addon1">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon bg-primary border-primary" id="colored-addon2">
+                        <i class="mdi mdi-menu text-white"></i>
+                      </span>
+                      <input type="text" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Password" aria-label="Password" aria-describedby="colored-addon2">
+                    </div>
+                  </div>
+             
+              <button type="submit" class="btn btn-success mr-2">LogIn</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3">
+            
+
+    </div>
+
+</div>
+</div>
+</div>
