@@ -38,13 +38,14 @@ export class SelectemployeeComponent implements OnInit {
 
   changeempvalue(first_name: any): void{
     var selectedindex = first_name.target.selectedIndex;
-    // var selectedtext = first_name.target[selectedindex].text;
+    var selectedtext = first_name.target[selectedindex].text;
 
-    this.empservice.GetselectEmployee(selectedindex).subscribe((res)=>{
+    this.empservice.GetselectEmployee(selectedtext).subscribe((data)=>{
 
-      this.data = res;
+//       this.data = res;
 
-      this.datas = this.data;
+//       this.datas = this.data;
+        this.employee = data;
       // this.datas = data;
        console.log(this.employee);
     })    
